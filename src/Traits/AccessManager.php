@@ -35,7 +35,7 @@ trait AccessManager
         // Loop through each key
         foreach ($this->protectedFields as $field => $rule) {
             if (!in_array($field, $this->getHidden())) {
-                throw new Exception('Error Processing Request');
+                continue;
             }
 
             switch (gettype($rule)) {
